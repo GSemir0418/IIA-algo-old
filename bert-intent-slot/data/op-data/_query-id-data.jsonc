@@ -35,17 +35,17 @@
     }
   },
   {
-    "text": "获取ID为6的记录信息",
+    "text": "获取ID为123的记录信息",
     "intent": "QUERY",
     "slots": {
-      "id": "6"
+      "id": "123"
     }
   },
   {
-    "text": "可否查找一下id是1标识的数据",
+    "text": "可否查找一下id是123标识的数据",
     "intent": "QUERY",
     "slots": {
-      "id": "1"
+      "id": "123"
     }
   },
   {
@@ -276,7 +276,7 @@
     "text": "找到id是456的信息",
     "intent": "QUERY",
     "slots": {
-      "id": "456"
+      "name": "456"
     }
   },
   {
@@ -309,10 +309,10 @@
     }
   },
   {
-    "text": "查询id为0010的当前状态",
+    "text": "查询id为001的当前状态",
     "intent": "QUERY",
     "slots": {
-      "id": "0010"
+      "id": "001"
     }
   },
   {
@@ -327,48 +327,6 @@
     "intent": "QUERY",
     "slots": {
       "id": "321"
-    }
-  },
-  {
-    "text": "查ID9001",
-    "intent": "QUERY",
-    "slots": {
-      "id": "9001"
-    }
-  },
-  {
-    "text": "查ID2211",
-    "intent": "QUERY",
-    "slots": {
-      "id": "2211"
-    }
-  },
-  {
-    "text": "查ID7",
-    "intent": "QUERY",
-    "slots": {
-      "id": "7"
-    }
-  },
-  {
-    "text": "查IDAB00D",
-    "intent": "QUERY",
-    "slots": {
-      "id": "AB00D"
-    }
-  },
-  {
-    "text": "查id5600",
-    "intent": "QUERY",
-    "slots": {
-      "id": "5600"
-    }
-  },
-  {
-    "text": "查ID130",
-    "intent": "QUERY",
-    "slots": {
-      "id": "130"
     }
   }
 ]

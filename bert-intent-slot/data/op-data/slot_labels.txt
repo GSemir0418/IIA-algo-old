@@ -3,11 +3,3 @@
 [O]
 I_id
 B_id
-I_code
-B_code
-I_status
-B_status
-I_name
-B_name
-I_quantity
-B_quantity
