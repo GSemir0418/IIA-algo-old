@@ -1,14 +1,17 @@
 # -*- coding:utf-8 -*-
+# 告诉Python解释器这个文件使用UTF-8编码。
 
-import json
-from tqdm import tqdm
+# 使用BERT分词器处理原始数据，并为训练准备好意图和槽位的数据集，这可以用于后续的机器学习模型训练。
 
-from torch.utils.data import Dataset
-from transformers import BertTokenizer
+import json # 处理JSON文件
+from tqdm import tqdm # 在控制台显示进度条
 
-from labeldict import LabelDict
+from torch.utils.data import Dataset # 创建数据集的父类
+from transformers import BertTokenizer # 文本转换成BERT模型能理解的形式
 
+from labeldict import LabelDict # 处理标签字典
 
+# 为文本中的每个单词或词组赋予一个标签，以表明它是不是一个特定的“槽位”。如果文本中的词和给定的模式匹配，我们就给这个词标上一个特定的标签，比如B_location表示位置的开始，I_location表示位置的内部。如果没有匹配，就标记为普通词[O]。
 def get_slot_labels(text, slots, tokenizer):
     """
     text : a string of text
@@ -41,9 +44,10 @@ def get_slot_labels(text, slots, tokenizer):
 
     return slot_labels
 
-
+# 用于存储处理后的数据，包括分词后的输入文本、槽位标签和意图标签
 class IntentSlotDataset(Dataset):
     def __init__(self, raw_data, intent_labels, slot_labels, tokenizer):
+        # 初始化数据集，包括转换意图和槽位的标签，并将原始数据转换为模型训练时需要的格式
         super().__init__()
         self.intent_label_dict = LabelDict(intent_labels)
         self.slot_label_dict = LabelDict(slot_labels)
@@ -70,6 +74,7 @@ class IntentSlotDataset(Dataset):
             )
         print('Finished processing all data.')
 
+        # 把数据打包成一个批次，并填充，以确保每个批次中的数据具有相同的长度，这对于要在神经网络中使用它们是必要的。
         def batch_collate_fn(batch_data):
             batch_intent_ids = [item['intent_id'] for item in batch_data]
             max_seq_length = max([len(item['input_ids']) for item in batch_data])
@@ -80,6 +85,7 @@ class IntentSlotDataset(Dataset):
 
         self.batch_collate_fn = batch_collate_fn
 
+    # 允许你加载储存在文件系统中的训练数据和标签文件
     @classmethod
     def load_from_path(cls, data_content, intent_label_path, slot_label_path, **kwargs):
         """加载数据集"""
@@ -102,6 +108,7 @@ class IntentSlotDataset(Dataset):
 
 
 if __name__ == '__main__':
+# 它加载了数据并创建了一个 IntentSlotDataset 实例。最后，它打印出数据集中的第一条数据和原始数据的第一条数据，作为检查。
     data_path = '/home/pengyu/workspace/intent-detect-core/data/intent_train_data.json'
     intent_label_path = 'data/intent_labels.txt'
     slot_label_path = 'data/slot_labels.txt'

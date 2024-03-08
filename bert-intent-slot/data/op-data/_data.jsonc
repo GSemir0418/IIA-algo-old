@@ -1,4 +1,6 @@
+
 [
+  // id
   {
     "text": "找出id为123的记录",
     "intent": "QUERY",
@@ -77,6 +79,7 @@
     }
   },
 
+  // code
   {
     "text": "请帮我查询编码为1的数据",
     "intent": "QUERY",
@@ -126,6 +129,7 @@
       "code": "123"
     }
   },
+  // status
   {
     "text": "能否帮我查找所有锁定的订单",
     "intent": "QUERY",
@@ -161,6 +165,7 @@
       "status": "locked"
     }
   },
+  // name
   {
     "text": "找到名称是工单2的信息",
     "intent": "QUERY",
@@ -182,6 +187,7 @@
       "name": "工单2"
     }
   },
+  // quantity
   {
     "text": "查找所有数量大于50的数据项",
     "intent": "QUERY",
@@ -196,170 +202,79 @@
       "quantity": "小于100"
     }
   },
+ 
   {
     "text": "我需要找出所有数量等于100的物资",
     "intent": "QUERY",
     "slots": {
       "quantity": "等于100"
     }
-  },
-
-  {
-    "text": "请快速检索1234编号的结果",
-    "intent": "QUERY",
-    "slots": {
-      "code": "1234"
-    }
-  },
-  {
-    "text": "我想要123号的详细信息",
-    "intent": "QUERY",
-    "slots": {
-      "code": "123"
-    }
-  },
-  {
-    "text": "能否帮忙拉出编码123的数据集",
-    "intent": "QUERY",
-    "slots": {
-      "code": "123"
-    }
-  },
-  {
-    "text": "展示一下带有ID ABC123的记录",
-    "intent": "QUERY",
-    "slots": {
-      "id": "ABC123"
-    }
-  },
-  {
-    "text": "寻找id12-34B的相关信息",
-    "intent": "QUERY",
-    "slots": {
-      "id": "12-34B"
-    }
-  },
-  {
-    "text": "我需要查阅的是ID ZX-001的资料",
-    "intent": "QUERY",
-    "slots": {
-      "id": "ZX-001"
-    }
-  },
-  {
-    "text": "讲个笑话听听",
-    "intent": "QUERY",
-    "slots": {
-    }
-  },
-  {
-    "text": "我想听今天的新闻",
-    "intent": "QUERY",
-    "slots": {
-    }
-  },
-  {
-    "text": "设定明早七点的闹钟",
-    "intent": "QUERY",
-    "slots": {
-    }
-  },
-  {
-    "text": "把ID为123额条目给我展示下",
-    "intent": "QUERY",
-    "slots": {
-      "id": "123"
-    }
-  },
-  {
-    "text": "急需看一下编号为345的那个记录是啥",
-    "intent": "QUERY",
-    "slots": {
-      "code": "345"
-    }
-  },
-  {
-    "text": "寻找ID123的条款记录有没有",
-    "intent": "QUERY",
-    "slots": {
-      "id": "123"
-    }
-  },
-  {
-    "text": "查询编码为001的当前状态",
-    "intent": "QUERY",
-    "slots": {
-      "code": "001"
-    }
-  },
-  {
-    "text": "显示所有状态为未锁定的订单",
-    "intent": "QUERY",
-    "slots": {
-      "status": "unlock"
-    }
-  },
-  {
-    "text": "对于ID为456的项目，需要查看其进度",
-    "intent": "QUERY",
-    "slots": {
-      "id": "456"
-    }
-  },
-  {
-    "text": "把那个编码是321的记录给我看看",
-    "intent": "QUERY",
-    "slots": {
-      "code": "321"
-    }
-  },
-  {
-    "text": "可以找到带123标记的数据吗？",
-    "intent": "QUERY",
-    "slots": {
-      "id": "123"
-    }
-  },
-  {
-    "text": "请提取ID是123ABC的所有详细记录",
-    "intent": "QUERY",
-    "slots": {
-      "id": "123ABC"
-    }
-  },
-  {
-    "text": "找出完全匹配ID 45678的数据行",
-    "intent": "QUERY",
-    "slots": {
-      "id": "45678"
-    }
-  },
-  {
-    "text": "希望能够查到仅针对ID: 12345的信息",
-    "intent": "QUERY",
-    "slots": {
-      "id": "12345"
-    }
-  },
-  {
-    "text": "检索ID 111对应的客户信息",
-    "intent": "QUERY",
-    "slots": {
-      "id": "111"
-    }
-  },
-  {
-    "text": "读取ID为222的订单状态",
-    "intent": "QUERY",
-    "slots": {
-      "id": "222"
-    }
-  },
-  {
-    "text": "搜寻ID 333所关联的全部工单",
-    "intent": "QUERY",
-    "slots": {
-      "id": "333"
-    }
   }
+  // {
+  //   "text": "我想要查找昨天创建的条目",
+  //   "intent": "QUERY",
+  //   "slots": {
+  //     "date": "yesterday"
+  //   }
+  // },
+  // {
+  //   "text": "删除状态为锁定的信息",
+  //   "intent": "DELETE",
+  //   "slots": {
+  //     "status": "locked"
+  //   }
+  // },
+  // {
+  //   "text": "移除所有锁定的项目",
+  //   "intent": "DELETE",
+  //   "slots": {
+  //     "status": "locked"
+  //   }
+  // },
+  // {
+  //   "text": "清除编码为1的数据",
+  //   "intent": "DELETE",
+  //   "slots": {
+  //     "code": "1"
+  //   }
+  // },
+  // {
+  //   "text": "撤销产品代码为579的商品",
+  //   "intent": "DELETE",
+  //   "slots": {
+  //     "code": "579"
+  //   }
+  // },
+  // {
+  //   "text": "我要更新订单号为789的状态为锁定",
+  //   "intent": "UPDATE",
+  //   "slots": {
+  //     "code": "789",
+  //     "status": "locked"
+  //   }
+  // },
+  // {
+  //   "text": "更新工单ID为456的名称为name",
+  //   "intent": "UPDATE",
+  //   "slots": {
+  //     "id": "456",
+  //     "name": "name"
+  //   }
+  // },
+  // {
+  //   "text": "将编号为0003的工单状态改为正常",
+  //   "intent": "UPDATE",
+  //   "slots": {
+  //     "code": "0003",
+  //     "status": "normal"
+  //   }
+  // },
+  // {
+  //   "text": "修改name工单的编码为1234",
+  //   "intent": "UPDATE",
+  //   "slots": {
+  //     "name": "name",
+  //     "code": "1234"
+  //   }
+  // }
 ]
